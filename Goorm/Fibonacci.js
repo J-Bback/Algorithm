@@ -1,3 +1,8 @@
+/**
+ * @brief 피보나치 수열의 합 구하기
+ * @author hyesoo-ahn
+ */
+
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
@@ -8,11 +13,9 @@ let num;
 let value = "";
 
 rl.on("line", function (input) {
-  // 반복하여 터미널에 입력을 받음, 조건문이 없을 경우 한번만 입력받음.
   value = input;
   rl.close();
 }).on("close", function () {
-  // 위에서 입력받는 코드실행(조건문)이 끝나면 여기서 출력 코드 실행.
   Fibonacci(Number(value));
   process.exit();
 });
