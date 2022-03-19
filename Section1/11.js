@@ -1,5 +1,5 @@
 /**
- * @brief 입력된 문자열 중에서 A를 #으로 바꿔서 출력하기
+ * @brief 중복 문자 제거
  * @author J-Bback
  *  */
 
@@ -10,22 +10,18 @@ const r1 = readline.createInterface({
   output: process.stdout,
 });
 
-let input;
+let str;
 
 r1.on('line', function (line) {
-  input = line;
+  str = line;
   r1.close();
 }).on('close', function () {
-  solution(input);
+  solution(str);
   process.exit();
 });
 
 function solution(str) {
   let arr = str.split('');
-  for (let i = 0; i < str.length; i++) {
-    if (arr[i] === 'A') {
-      arr[i] = '#';
-    }
-  }
-  console.log(arr.join(''));
+  const answer = arr.reduce((acc, cur) => (acc.includes(cur) ? acc : acc + cur));
+  console.log(answer);
 }
