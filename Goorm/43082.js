@@ -1,4 +1,7 @@
-// 최단 거리 구하기 문제
+/**
+   * @brief 최단 거리 구하기 문제
+   * @author J-Bback
+*/
 
 const readline = require("readline");
 const rl = readline.createInterface({
