@@ -1,7 +1,4 @@
-/**
- * @brief 
- * @author J-Bback
- *  */
+// readline을 활용한 입력방법입니다.
 
 const readline = require('readline');
 
@@ -13,9 +10,8 @@ const r1 = readline.createInterface({
 let input;
 
 r1.on('line', function(line) {
-  
+  console.log(line);
   r1.close();
 }).on('close', function() {
-  
   process.exit();
 });

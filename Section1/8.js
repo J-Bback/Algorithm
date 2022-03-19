@@ -1,5 +1,5 @@
 /**
- * @brief 
+ * @brief 일곱난쟁이
  * @author J-Bback
  *  */
 
