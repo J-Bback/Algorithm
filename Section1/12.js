@@ -1,5 +1,5 @@
 /**
- * @brief 문자 찾기
+ * @brief 중복단어제거
  * @author J-Bback
  *  */
 
@@ -10,26 +10,28 @@ const r1 = readline.createInterface({
   output: process.stdout,
 });
 
-let str;
-let char;
+let num;
+let input = [];
 let count = 0;
 
 r1.on('line', function (line) {
   if (count === 0) {
-    str = line;
+    num = Number(line);
   } else {
-    char = line;
+    input.push(line);
   }
-  if (count === 1) {
+  if (count === num) {
     r1.close();
   }
   count += 1;
 }).on('close', function () {
-  solution(str, char);
+  solution(input);
   process.exit();
 });
 
-function solution(str, char) {
-  const answer = Array.from(str, (v) => (v === char ? v : '')).join('').length;
-  console.log('answer', answer);
+function solution(arr) {
+  const answer = [...new Set(arr)];
+  for (let i = 0; i < answer.length; i++) {
+    console.log(answer[i]);
+  }
 }
